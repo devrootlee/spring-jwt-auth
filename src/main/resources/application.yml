@@ -1,0 +1,36 @@
+#server port
+server:
+  port: 8080
+
+#database
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+      settings:
+        trace: false
+        web-allow-other: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:~/h2  #Embedded Mode
+    username: h2
+    password: h201!!
+  jpa:
+    hibernate:
+      ddl-auto: create
+    open-in-view: false
+    properties:
+      jdbc:
+        time_zone: UTC
+
+#log
+logging:
+  level:
+    org.hibernate.sql: debug
+    org.hibernate.type.descriptor.sql.BasicBinder: trace
+
+#jwt
+jwt:
+  secretkey: eGm7z+L1a51Di4q5O0nHfsvqsvPpX1SYz8rE9Ak91sE=
+  expiration: 1800000 #jwt 만료시간 30분

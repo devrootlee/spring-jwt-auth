@@ -1,2 +1,4 @@
 # spring-jwt-auth
-spring jwt signup,login api(spring boot + jpa + jwt + h2(embeded mode))
+## 스프링 jwt 회원가입,로그인 API
+
+#### 패키지 구조
