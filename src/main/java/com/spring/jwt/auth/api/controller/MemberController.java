@@ -1,7 +1,7 @@
 package com.spring.jwt.auth.api.controller;
 
 import com.spring.jwt.auth.api.common.util.CommonUtil;
-import com.spring.jwt.auth.api.dto.UserDto;
+import com.spring.jwt.auth.api.dto.MemberDto;
 import com.spring.jwt.auth.api.service.MemberService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -31,7 +31,7 @@ public class MemberController {
      * @throws Exception
      */
     @PostMapping("/signUp")
-    public ResponseEntity signUp(@Valid @RequestBody UserDto.signUpDto signUpDto) throws Exception {
+    public ResponseEntity signUp(@Valid @RequestBody MemberDto.signUpDto signUpDto) throws Exception {
 
         return commonUtil.successResponseUtil(memberService.signUp(signUpDto), HttpStatus.OK);
     }
@@ -43,7 +43,7 @@ public class MemberController {
      * @throws Exception
      */
     @PostMapping("/login")
-    public ResponseEntity logIn(@Valid @RequestBody UserDto.loginDto loginDto) throws Exception {
+    public ResponseEntity logIn(@Valid @RequestBody MemberDto.loginDto loginDto) throws Exception {
 
         return commonUtil.successResponseUtil(memberService.logIn(loginDto), HttpStatus.OK);
     }

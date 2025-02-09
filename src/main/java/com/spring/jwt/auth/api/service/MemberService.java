@@ -1,7 +1,7 @@
 package com.spring.jwt.auth.api.service;
 
 import com.spring.jwt.auth.api.common.security.JwtProvider;
-import com.spring.jwt.auth.api.dto.UserDto;
+import com.spring.jwt.auth.api.dto.MemberDto;
 import com.spring.jwt.auth.api.entity.Member;
 import com.spring.jwt.auth.api.repository.MemberRepository;
 import org.springframework.http.HttpStatus;
@@ -27,7 +27,7 @@ public class MemberService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Map signUp(UserDto.signUpDto signUpDto) throws Exception {
+    public Map signUp(MemberDto.signUpDto signUpDto) throws Exception {
         Map result = new HashMap();
 
         Member member = Member.builder()
@@ -49,7 +49,7 @@ public class MemberService {
         return result;
     }
 
-    public Map logIn(UserDto.loginDto loginDto) throws Exception {
+    public Map logIn(MemberDto.loginDto loginDto) throws Exception {
         Map result = new HashMap();
 
         //아이디가 존재할 경우
